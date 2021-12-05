@@ -42,7 +42,7 @@ public class CursosController {
 		List<CategoriaModel> listaCategoria = categoriaServicio.buscarTodo();
 		model.addAttribute("lstCategoria", listaCategoria);
 		
-		return "/moduloCursos/nuevaCursos";
+		return "/moduloCursos/nuevoCursos";
 	}
 	
 	@RequestMapping(value = "/guardar", method = RequestMethod.POST)

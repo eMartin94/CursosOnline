@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<title>Editar Cursos</title>
+<style type="text/css">
+body{
+background-color: #1D202B;
+color: white;
+font-family: 'Josefin Sans', sans-serif;
+}
+h1{
+font-weight: bold;
+}
+input{
+text-align:center;
+}
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="m-3">
+		<h1>Editar Cursos</h1>
+		</div>
+		<br />
+		<form action="#" th:action="@{/cursos/guardar}" th:object="${cursos}" method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>ID Cursos:</td>
+					<td><input class="form-control" type="text" th:field="*{idCursos}" readonly="readonly" />
+					</td>
+				</tr>
+                <tr>
+                    <td>Curso:</td>
+                    <td><input class="form-control" type="text" th:field="*{nomCurso}" /></td>
+                </tr>
+				<tr>
+					<td>Descripcion:</td>
+					<td><input class="form-control" type="text" th:field="*{descripCurso}" /></td>
+				</tr>
+				<tr>
+					<td>Precio:</td>
+					<td><input class="form-control" type="text" th:field="*{precio}" /></td>
+				</tr>
+				<tr>
+					<td>Categoria:</td>
+					<td>
+<!-- 						<input class="form-control" type="text" th:field="*{categoria}" /> -->
+						<Select th:field="*{categoria}" class="form-control">
+							<option th:each="categoria:${lstCategoria}"
+									th:value="${categoria.idCategoria}"
+									th:text="${categoria.nomCategoria}"
+									/>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2"><button class="btn btn-primary" type="submit">Guardar</button></td>
+					
+				</tr>
+			</table>
+		</form>
+		
+		<div class="m-3 d-flex justify-content-between">
+		<span></span>
+		<button class="btn btn-secondary">
+		<a th:href="@{/cursos/listarCursos}" style="text-decoration: none; color: white; text-align: star;">Regresar al listado</a> <br />
+		</button>
+	</div>
+	
+	
+</body>
+</html>

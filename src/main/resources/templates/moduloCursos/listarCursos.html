@@ -83,39 +83,36 @@
 				class="fas fa-plus-circle"></i> Nuevo Curso</a>
 		</button>
 		<br /> <br />
-		<div class="table-responsive">
-			<table class="table table-bordered table-hover text-center"
-				id="ejemplo1" width="100%" cellspacing="0">
-			<thead class="table bg-dark">
-				<tr>
-					<th>#</th>
-					<th>IdFunción</th>
-					<th>Nombre</th>
-					<th>Descripcion</th>
-					<th>Precio</th>
-					<th>Categoria</th>
-					<th>Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="cursos : ${listaCursos}">
-					<td>#</td>
-					<td th:text="${cursos.idCursos}">Id</td>
-					<td th:text="${cursos.nomCurso}">Nombre</td>
-					<td th:text="${cursos.descripCurso}">Categoria</td>
-					<td th:text="${cursos.precio}">Precio</td>|
+		<div class="contCard">
 
-					<td th:text="${cursos.categoria}">Categoria</td>
-					<td><span class="badge badge-dark p-2 m-1"><a
+
+
+			<div th:each="cursos : ${listaCursos}">
+				<div class="card" style="width: 18rem;">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title" th:text="${cursos.idCursos}" hidden></h5>
+						<p class="card-text" th:text="${cursos.nomCurso}"></p>
+						<p class="card-text" th:text="${cursos.descripCurso}"></p>
+						<p class="card-text" th:text="${cursos.precio}"></p>
+						<p class="card-text" th:text="${cursos.categoria.nomCategoria}"></p>
+						<a href="#" class="btn btn-primary">Go somewhere</a> <span
+							class="badge badge-dark p-2 m-1"><a
 							th:href="@{/cursos/actualizar/{id}(id=${cursos.idCursos})}"
-							style="text-decoration: none; color: white;"><i class="fas fa-pen"></i></a></span> <span
-						class="badge badge-danger p-2 m-1"><a
+							style="text-decoration: none; color: white;"><i
+								class="fas fa-pen"></i></a></span> <span class="badge badge-danger p-2 m-1"><a
 							th:href="@{/cursos/eliminar/{id}(id=${cursos.idCursos})}"
-							style="text-decoration: none; color: white;"><i class="fas fa-trash-alt"></i></a></span></td>
-				</tr>
-			</tbody>
-		</table>
+							style="text-decoration: none; color: white;"><i
+								class="fas fa-trash-alt"></i></a></span>
+					</div>
+				</div>
+			</div>
+
+
+
 		</div>
+
+
 	</div>
 	<br />
 	<br />
