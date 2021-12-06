@@ -45,7 +45,7 @@ public class CursosModel implements Serializable{
 	
 	@Basic(optional = false)
 	@Column(name = "precio")
-	private String precio;
+	private Double precio;
 	
 	@JoinColumn(name = "categoria", referencedColumnName = "idCategoria")
     @ManyToOne(optional = false)
@@ -58,7 +58,7 @@ public class CursosModel implements Serializable{
 		this.idCursos = idCursos;
 	}
 	
-	public CursosModel(Integer idCursos, String nomCurso, String descripCurso, String precio) {
+	public CursosModel(Integer idCursos, String nomCurso, String descripCurso, Double precio) {
 //		super();
 		this.idCursos = idCursos;
 		this.nomCurso = nomCurso;
@@ -91,11 +91,11 @@ public class CursosModel implements Serializable{
 		this.descripCurso = descripCurso;
 	}
 
-	public String getPrecio() {
+	public Double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(String precio) {
+	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
 
