@@ -37,6 +37,7 @@ public class CursosService {
 		cursosActual.setIdCursos(cursosActualizar.getIdCursos());
 		cursosActual.setNomCurso(cursosActualizar.getNomCurso());
 		cursosActual.setDescripCurso(cursosActualizar.getDescripCurso());
+		cursosActual.setDuraCurso(cursosActualizar.getDuraCurso());
 		cursosActual.setPrecio(cursosActualizar.getPrecio());
 		
 		CursosModel cursosActualizado = cursosRepositorio.save(cursosActual);

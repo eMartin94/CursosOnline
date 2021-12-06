@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 	@NamedQuery(name = "CursosModel.findByIdCursos", query = "SELECT c FROM CursosModel c WHERE c.idCursos = :idCursos"),
 	@NamedQuery(name = "CursosModel.findByNomCurso", query = "SELECT c FROM CursosModel c WHERE c.nomCurso = :nomCurso"),
 	@NamedQuery(name = "CursosModel.findByDescripCurso", query = "SELECT c FROM CursosModel c WHERE c.descripCurso = :descripCurso"),
+	@NamedQuery(name = "CursosModel.findByDuraCurso", query = "SELECT c FROM CursosModel c WHERE c.duraCurso = :duraCurso"),
 	@NamedQuery(name = "CursosModel.findByPrecio", query = "SELECT c FROM CursosModel c WHERE c.precio = :precio")	
 })
 public class CursosModel implements Serializable{
@@ -44,6 +45,10 @@ public class CursosModel implements Serializable{
 	private String descripCurso;
 	
 	@Basic(optional = false)
+	@Column(name = "duraCurso")
+	private String duraCurso;
+	
+	@Basic(optional = false)
 	@Column(name = "precio")
 	private Double precio;
 	
@@ -58,11 +63,12 @@ public class CursosModel implements Serializable{
 		this.idCursos = idCursos;
 	}
 	
-	public CursosModel(Integer idCursos, String nomCurso, String descripCurso, Double precio) {
+	public CursosModel(Integer idCursos, String nomCurso, String descripCurso, String duraCurso, Double precio) {
 //		super();
 		this.idCursos = idCursos;
 		this.nomCurso = nomCurso;
 		this.descripCurso = descripCurso;
+		this.duraCurso = duraCurso;
 		this.precio = precio;
 	}
 
@@ -89,6 +95,14 @@ public class CursosModel implements Serializable{
 
 	public void setDescripCurso(String descripCurso) {
 		this.descripCurso = descripCurso;
+	}
+
+	public String getDuraCurso() {
+		return duraCurso;
+	}
+
+	public void setDuraCurso(String duraCurso) {
+		this.duraCurso = duraCurso;
 	}
 
 	public Double getPrecio() {

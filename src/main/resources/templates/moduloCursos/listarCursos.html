@@ -94,6 +94,8 @@
 						<p class="card-text" th:text="${cursos.idCursos}" hidden></p>
 						<h4 class="card-title" th:text="${cursos.nomCurso}"></h4>
 						<p class="card-text" th:text="${cursos.descripCurso}"></p>
+						<span>Duración : </span>
+						<span class="card-text" th:text="${cursos.duraCurso}"></span><br>
 						<span>Precio : </span>
 						<b class="card-text" th:text="'S/' +  ${cursos.precio}"></b>
 						<p class="card-text" th:text="${cursos.categoria.nomCategoria}"></p>

@@ -36,21 +36,25 @@ text-align:center;
 				</tr>
                 <tr>
                     <td>Curso:</td>
-                    <td><input class="form-control" type="text" th:field="*{nomCurso}" /></td>
+                    <td><input class="form-control" type="text" th:field="*{nomCurso}" required/></td>
                 </tr>
 				<tr>
 					<td>Descripcion:</td>
-					<td><input class="form-control" type="text" th:field="*{descripCurso}" /></td>
+					<td><input class="form-control" type="text" th:field="*{descripCurso}" required/></td>
 				</tr>
 				<tr>
 					<td>Precio:</td>
-					<td><input class="form-control" type="text" th:field="*{precio}" /></td>
+					<td><input class="form-control" type="text" th:field="*{precio}" required/></td>
+				</tr>
+				<tr>
+					<td>Duración:</td>
+					<td><input class="form-control" type="text" th:field="*{duraCurso}" required/></td>
 				</tr>
 				<tr>
 					<td>Categoria:</td>
 					<td>
 <!-- 						<input class="form-control" type="text" th:field="*{categoria}" /> -->
-						<Select th:field="*{categoria}" class="form-control">
+						<Select th:field="*{categoria}" class="form-control" required>
 							<option th:each="categoria:${lstCategoria}"
 									th:value="${categoria.idCategoria}"
 									th:text="${categoria.nomCategoria}"
