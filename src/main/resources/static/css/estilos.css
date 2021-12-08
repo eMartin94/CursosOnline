@@ -18,6 +18,10 @@ body{
 	background-color: var(--body);
 	font-family: var(--font);
 }
+h1 {
+	text-align: end;
+	font-weight: bold;
+}
 
 /* INICIO NAVBAR */
 .navbar{
@@ -207,24 +211,20 @@ li.nav-item.active .nav-link.disabled {
 }
 
 /* FIN CARDS */
-
-
-
-	
-	@media ( max-width : 1000px) {
-		.contCard {
-			display: grid;
-			grid-template-columns: auto auto;
-			gap: 20px;
-			width: 100%;
-		}
+@media ( max-width : 1000px) {
+	.contCard {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 20px;
+		width: 100%;
 	}
-	
-	@media ( max-width : 700px) {
-		.contCard {
-			display: grid;
-			grid-template-columns: auto;
-			gap: 20px;
-			width: 100%;
-		}
+}
+
+@media ( max-width : 700px) {
+	.contCard {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 20px;
+		width: 100%;
 	}
+}
