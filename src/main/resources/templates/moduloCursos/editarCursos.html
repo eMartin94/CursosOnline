@@ -30,8 +30,8 @@ text-align:center;
 		<form action="#" th:action="@{/cursos/guardar}" th:object="${cursos}" method="post">
 			<table border="0" cellpadding="10">
 				<tr>
-					<td>ID Cursos:</td>
-					<td><input class="form-control" type="text" th:field="*{idCursos}" readonly="readonly" />
+<!-- 					<td>ID Cursos:</td> -->
+					<td><input class="form-control" type="text" th:field="*{idCursos}" readonly="readonly" hidden/>
 					</td>
 				</tr>
                 <tr>
@@ -40,14 +40,14 @@ text-align:center;
                 </tr>
 				<tr>
 					<td>Descripcion:</td>
-					<td><input class="form-control" type="text" th:field="*{descripCurso}" required/></td>
+					<td><textarea class="form-control" type="text" th:field="*{descripCurso}" required/></textarea>
 				</tr>
 				<tr>
 					<td>Precio:</td>
 					<td><input class="form-control" type="text" th:field="*{precio}" required/></td>
 				</tr>
 				<tr>
-					<td>Duración:</td>
+					<td>Duracion:</td>
 					<td><input class="form-control" type="text" th:field="*{duraCurso}" required/></td>
 				</tr>
 				<tr>
