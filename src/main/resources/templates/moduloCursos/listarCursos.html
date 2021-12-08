@@ -17,14 +17,14 @@
 <link href="../css/dataTables.bootstrap4.min.css" rel="stylesheet"
 	type="text/css" />
 <link href="../css/miLogin.css" rel="stylesheet" type="text/css" />
-<link href="../css/estilos.css" rel="stylesheet" type="text/css" />
 <link href="../css/miLayout.css" rel="stylesheet" type="text/css" />
+<link href="../css/estilos.css" rel="stylesheet" type="text/css" />
 <!-- link href="../css/font-awesome.min.css" rel="stylesheet"
 	type="text/css" /-->
 <link rel="stylesheet"
 	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 <link href="../css/datatables.min.css" rel="stylesheet" type="text/css" />
-<title>Listar Curssssssos</title>
+<title>Listar Cursoooooooos</title>
 
 </head>
 <body>
@@ -52,6 +52,8 @@
 					th:href="@{/cursos/listarCursos}">Cursos</a></li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
+				<!-- 					<button class="btn btn-warning btn-sm mr-2 btn-inisesion">Iniciar Sesion</button> -->
+				<!-- 					<button class="btn btn-secondary btn-sm mr-2 btn-registrar">Registrarse</button> -->
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle mr-3 mr-lg-0"
 					id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -62,7 +64,6 @@
 						aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item" th:href="@{/logout}">Salir</a>
 					</div></li>
-
 			</form>
 		</div>
 	</nav>
@@ -73,10 +74,9 @@
 		<div class="m-3 text-uppercase">
 			<h1>Cursos</h1>
 		</div>
-		<button class="btn btn-dark">
-			<a th:href="@{/cursos/nuevo}"
-				style="text-decoration: none; color: white;"><i
-				class="fas fa-plus-circle"></i> Nuevo Cursos</a>
+		<button class="btn btn-dark btn-new">
+			<a th:href="@{/cursos/nuevo}"><i class="fas fa-plus-circle"></i>
+				Nuevo Curso</a>
 		</button>
 		<br /> <br />
 		<div class="contCard">
@@ -85,24 +85,46 @@
 
 			<div th:each="cursos : ${listaCursos}">
 				<div class="card" style="width: 18rem;">
-					<img src="..." class="card-img-top" alt="...">
+					<!-- <img src="..." class="card-img-top" alt="..."> -->
 					<div class="card-body">
 						<p class="card-text" th:text="${cursos.idCursos}" hidden></p>
-						<h4 class="card-title" th:text="${cursos.nomCurso}"></h4>
-						<p class="card-text" th:text="${cursos.descripCurso}"></p>
-						<span>Duración : </span>
-						<span class="card-text" th:text="${cursos.duraCurso}"></span><br>
-						<span>Precio : </span>
-						<b class="card-text" th:text="'S/' +  ${cursos.precio}"></b>
-						<p class="card-text" th:text="${cursos.categoria.nomCategoria}"></p>
-						<a href="#" class="btn btn-primary">Ver Curso</a> <span
-							class="badge badge-dark p-2 m-1"><a
-							th:href="@{/cursos/actualizar/{id}(id=${cursos.idCursos})}"
-							style="text-decoration: none; color: white;"><i
-								class="fas fa-pen"></i></a></span> <span class="badge badge-danger p-2 m-1"><a
-							th:href="@{/cursos/eliminar/{id}(id=${cursos.idCursos})}"
-							style="text-decoration: none; color: white;"><i
-								class="fas fa-trash-alt"></i></a></span>
+						<h4 class="card-title text-center" th:text="${cursos.nomCurso}">Titulo</h4>
+						<div class="card-contenido">
+							<p class="card-text" th:text="${cursos.categoria.nomCategoria}">Cat</p>
+							<p class="card-text" th:text="${cursos.descripCurso}">Descripcion del curso</p>
+							<div>
+							<span>Duración : </span> <span class="card-text" th:text="${cursos.duraCurso}"></span> 
+							</div>
+							<div>
+							<span>Precio: </span> <b class="card-text" th:text="'S/' +  ${cursos.precio}"></b>
+							</div>
+
+						</div>
+
+						<div class="botones-card">
+							<a href="#" class="btn btn-dark btn-vercurso">Ver Curso</a>
+							<div class="btn-acciones">
+								<button class="badge btn-dark btn-editar">
+									<a th:href="@{/cursos/actualizar/{id}(id=${cursos.idCursos})}"><i
+										class="fas fa-pen"></i></a>
+								</button>
+								<button class="badge btn-dark btn-eliminar">
+									<a th:href="@{/cursos/eliminar/{id}(id=${cursos.idCursos})}"><i
+										class="fas fa-trash-alt"></i></a>
+								</button>
+								<!-- <button
+									class="badge btn-secondary btn-editar"><a
+									th:href="@{/cursos/actualizar/{id}(id=${cursos.idCursos})}"
+									><i
+										class="fas fa-pen"></i></a></button> 
+								<button class="badge btn-danger btn-eliminar"><a
+									th:href="@{/cursos/eliminar/{id}(id=${cursos.idCursos})}"
+									><i
+										class="fas fa-trash-alt"></i></a></button> -->
+
+							</div>
+
+						</div>
 					</div>
 				</div>
 			</div>
