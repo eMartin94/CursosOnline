@@ -5,12 +5,12 @@
 #sticky-footer {
   flex-shrink: none;
 }
-#nav-link-custom {
-    color: black;
-}
-.navbar-light .navbar-nav .nav-link {
-    color: white;
-}
+/* #nav-link-custom { */
+/*     color: black; */
+/* } */
+/* .navbar-light .navbar-nav .nav-link { */
+/*     color: white; */
+/* } */
 #seccion1{
     background: #ffffff
 }
