@@ -31,8 +31,8 @@
 
 	<nav class="navbar navbar-expand-md fixed-top navbar-light"
 		id="navmenu">
-		<a class="navbar-brand" href="#"> <img
-			src="../imagenes/idatLogo1.png" class="img-fluid imglogo"
+		<a class="navbar-brand" href="#"> 
+		<img src="../imagenes/idatLogo1.png" class="img-fluid imglogo"
 			alt="Responsive image" width=20 height=22>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -84,9 +84,9 @@
 
 
 			<div th:each="cursos : ${listaCursos}">
-				<div class="card" style="width: 18rem;">
-					<!-- <img src="..." class="card-img-top" alt="..."> -->
+				<div class="card">
 					<div class="card-body">
+					<img src="../imagenes/css-img.jpg" class="card-img img-card" alt="...">
 						<p class="card-text" th:text="${cursos.idCursos}" hidden></p>
 						<h4 class="card-title text-center" th:text="${cursos.nomCurso}">Titulo</h4>
 						<div class="card-contenido">
