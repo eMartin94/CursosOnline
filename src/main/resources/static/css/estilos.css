@@ -197,6 +197,16 @@ h1 {
 	box-shadow: 2px 3px var(--shadgris);
 }
 
+.table {
+	border-radius: 5px;
+	border-color: white;
+	color: white;
+}
+
+tbody {
+	background-color: rgba(0, 0, 0, 0.3)
+}
+
 
 .table td, .table th {
 	vertical-align: middle;
@@ -204,6 +214,10 @@ h1 {
 
 .table tr:hover td {
 	color: var(--negro);
+}
+.table .td-acciones{
+	display: flex;
+	justify-content: center;
 }
 
 .page-item.active .page-link {
@@ -239,104 +253,133 @@ h1 {
 
 /* INICIO CARDS */
 .contCard {
-	/* 	background-color: #0ff; */
-	/* 	display: grid; */
-	/* 	grid-template-columns: auto auto auto; */
-		gap: 20px;
-		max-width: 1200px;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		align-items: center;
-	}
-.card{
-	display: flex;
-	background-color: var(--amarillo);
-	border-radius: 20px;
-	border: 2px solid var(--negro);
-	box-shadow: 2px 3px var(--shadgris);
-	width: 300px;
-	height: 300px;
+  /* 	background-color: #0ff; */
+  /* 	display: grid; */
+  /* 	grid-template-columns: auto auto auto; */
+  gap: 20px;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.card-body{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+.card {
+  display: flex;
+  background-color: var(--amarillo);
+  border-radius: 20px;
+  border: 2px solid var(--negro);
+  box-shadow: 2px 3px var(--shadgris);
+  width: 500px;
+  height: 350px;
 }
-.card-contenido{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	z-index: 10;
-	
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-contenido {
+  width: 100%;
+
 }
 .card-body h4,
-.card-contenido p{
-	z-index: 10;
-	color: #fff;
+.card-contenido p {
+  z-index: 10;
+  color: #fff;
 }
-.btn-vercurso{
-	background-color: var(--shadamarillo);
-	outline: none;
-	border: 0px solid var(--negro);
-	box-shadow: 2px 3px var(--shadgris);
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  border-bottom: 2px solid;
 }
-.botones-card{
+.card-nametitle{
+	margin: 0;
+	text-transform: capitalize;
+}
+.card-precio{
+	width: 100%;
 	display: flex;
-	width: 100%;	
-	justify-content: space-between;
-	align-items: center;
+	justify-content: flex-end;
 }
-.btn-acciones{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 5px;
-	
+.card-text.precio{
+	margin-left: 5px;
 }
-.badge{
-	display: flex;
-	width: 35px;
-	height: 35px;
-	justify-content: center;
-	align-items: center;
-	border: 0px solid var(--negro);
-	font-size: 1.2rem;
-	box-shadow: 2px 3px var(--shadgris);
-	cursor: pointer;
+.btn-vercurso {
+  background-color: var(--shadamarillo);
+  outline: none;
+  border: 0px solid var(--negro);
+  box-shadow: 2px 3px var(--shadgris);
 }
-.badge a{
-	color: #fff;
-	text-decoration: none;
-	outline: none;
+.botones-card {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
-.btn-editar{
-	background-color: var(--gris);
+.btn-acciones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
-.btn-eliminar{
-	background-color: var(--rojo);
+.badge {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid var(--negro);
+  font-size: 1.2rem;
+  box-shadow: 2px 3px var(--shadgris);
+  cursor: pointer;
+}
+.badge a {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+.btn-editar {
+  background-color: var(--gris);
+}
+.btn-eliminar {
+  background-color: var(--rojo);
 }
 
-.img-card{
-	position: absolute;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	height: 150px;
-	top: 0;
-	border-radius: 20px 20px 0 0;
-	filter: contrast(50%);
+.img-card {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 150px;
+  top: 0;
+  border-radius: 20px 20px 0 0;
+  filter: contrast(50%);
 }
 
 /* FIN CARDS */
+@media ( max-width : 1200px) {
+	.contCard {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 20px;
+		width: 100%;
+	}
+	.card{
+		max-width: 400px;
+	}
+}
 @media ( max-width : 900px) {
 	.contCard {
 		display: grid;
 		grid-template-columns: auto auto;
 		gap: 20px;
 		width: 100%;
+	}
+	.card{
+		max-width: 350px;
+	
 	}
 }
 
@@ -351,5 +394,16 @@ h1 {
 		grid-template-columns: auto;
 		gap: 20px;
 		width: 100%;
+	}
+	.card{
+		max-width: 500px;
+	
+	}
+}
+
+@media ( max-width: 550px){
+	.card{
+		max-width: 350px;
+	
 	}
 }

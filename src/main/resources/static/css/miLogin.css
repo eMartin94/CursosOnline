@@ -85,22 +85,18 @@ body{
     width: 100%;
     font-size: 18px;
     border: 0;
+    outline: none;
 }
 .btn-login:hover{
 background-color: #F8A242;
 }
-
-
-
-.table {
-	border-radius: 5px;
-	border-color: white;
-	color: white;
+.btn-login:focus{
+	outline: none;
+  	box-shadow: none;
 }
 
-tbody {
-	background-color: rgba(0, 0, 0, 0.3)
-}
+
+
 
 
 

@@ -58,7 +58,7 @@
 				</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" th:href="@{/logout}">Salir</a>
+					<a class="dropdown-item" th:href="@{/login}">Salir</a>
 				</div>
 			</li>
 			<!-- <button class="btn btn-warning btn-sm mr-2 btn-inisesion">Iniciar Sesion</button>
@@ -85,17 +85,18 @@
 			<div th:each="cursos : ${listaCursos}">
 				<div class="card">
 					<div class="card-body">
-					<img src="../imagenes/css-img.jpg" class="card-img img-card" alt="...">
-						<p class="card-text" th:text="${cursos.idCursos}" hidden></p>
-						<h4 class="card-title text-center" th:text="${cursos.nomCurso}">Titulo</h4>
+					<!-- <img src="../imagenes/css-img.jpg" class="card-img img-card" alt="..."> -->
+						<div class="card-title">
+							<p class="card-text" th:text="${cursos.idCursos}" hidden></p>
+							<h4 class="card-nametitle" th:text="${cursos.nomCurso}"></h4>
+							<span class="card-text" th:text="${cursos.duraCurso}"> </span>
+						</div>
 						<div class="card-contenido">
-							<p class="card-text" th:text="${cursos.categoria.nomCategoria}">Cat</p>
-							<p class="card-text" th:text="${cursos.descripCurso}">Descripcion del curso</p>
-							<div>
-							<span>Duración : </span> <span class="card-text" th:text="${cursos.duraCurso}"></span> 
-							</div>
-							<div>
-							<span>Precio: </span> <b class="card-text" th:text="'S/' +  ${cursos.precio}"></b>
+							<p class="card-text" th:text="${cursos.categoria.nomCategoria}"></p>
+							<p class="card-text text-justify" th:text="${cursos.descripCurso}"></p>
+
+							<div class="card-precio">
+							<span>Precio: </span> <b class="card-text precio" th:text="'S/' +  ${cursos.precio}"></b>
 							</div>
 
 						</div>

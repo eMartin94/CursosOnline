@@ -35,7 +35,7 @@
             <form  class="formLogin" id="formulario1" th:action="@{/login}" method="post">
                 <div class="form-group text-center">
                     <legend>LOGIN</legend>
-                    <div th:if="${param.error}" class="alert alert-success">
+                    <div th:if="${param.error}" class="alert alert-danger">
                         Usuario y password Invalido.</div>
                     <div th:if="${param.logout}" class="alert alert-success">
                         Sesión cerrada</div>
@@ -51,7 +51,7 @@
                         name="password" placeholder="Ingresa Contraseña">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary btn-login" id="botonAuth">Iniciar Sesión</button>
+                    <button type="submit" class="btn btn-login" id="botonAuth">Iniciar Sesión</button>
                 </div>
             </form>
     
