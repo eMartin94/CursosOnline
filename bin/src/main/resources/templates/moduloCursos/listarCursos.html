@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+	crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+	rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="../css/responsive.bootstrap4.min.css" rel="stylesheet"
+	type="text/css" />
+<link href="../css/dataTables.bootstrap4.min.css" rel="stylesheet"
+	type="text/css" />
+<link href="../css/miLogin.css" rel="stylesheet" type="text/css" />
+<link href="../css/miLayout.css" rel="stylesheet" type="text/css" />
+<link href="../css/estilos.css" rel="stylesheet" type="text/css" />
+<!-- link href="../css/font-awesome.min.css" rel="stylesheet"
+	type="text/css" /-->
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<link href="../css/datatables.min.css" rel="stylesheet" type="text/css" />
+<title>Listar Cursoooooooos</title>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md fixed-top navbar-light"
+		id="navmenu">
+		<a class="navbar-brand" href="#"> <img
+			src="../imagenes/idatLogo1.png" class="img-fluid imglogo"
+			alt="Responsive image" width=20 height=22>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse " id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto topnav">
+				<li class="nav-item active"><a class="nav-link disabled"
+					href="#">Pizango <span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/categorias/listarCategoria}">Categoria</a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/cursos/listarCursos}">Cursos</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<!-- 					<button class="btn btn-warning btn-sm mr-2 btn-inisesion">Iniciar Sesion</button> -->
+				<!-- 					<button class="btn btn-secondary btn-sm mr-2 btn-registrar">Registrarse</button> -->
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle mr-3 mr-lg-0"
+					id="navbarDropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> <i
+						class="fas fa-user"></i> <span class="caret"></span>
+				</a>
+					<div class="dropdown-menu dropdown-menu-right bg-dark"
+						aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" th:href="@{/logout}">Salir</a>
+					</div></li>
+			</form>
+		</div>
+	</nav>
+
+
+
+	<div class="container">
+		<div class="m-3 text-uppercase">
+			<h1>Cursos</h1>
+		</div>
+		<button class="btn btn-dark btn-new">
+			<a th:href="@{/cursos/nuevo}"><i class="fas fa-plus-circle"></i>
+				Nuevo Curso</a>
+		</button>
+		<br /> <br />
+		<div class="contCard">
+
+
+
+			<div th:each="cursos : ${listaCursos}">
+				<div class="card" style="width: 18rem;">
+					<!-- <img src="..." class="card-img-top" alt="..."> -->
+					<div class="card-body">
+						<p class="card-text" th:text="${cursos.idCursos}" hidden></p>
+						<h4 class="card-title text-center" th:text="${cursos.nomCurso}">Titulo</h4>
+						<div class="card-contenido">
+							<p class="card-text" th:text="${cursos.categoria.nomCategoria}">Cat</p>
+							<p class="card-text" th:text="${cursos.descripCurso}">Descripcion del curso</p>
+							<div>
+							<span>Duración : </span> <span class="card-text" th:text="${cursos.duraCurso}"></span> 
+							</div>
+							<div>
+							<span>Precio: </span> <b class="card-text" th:text="'S/' +  ${cursos.precio}"></b>
+							</div>
+
+						</div>
+
+						<div class="botones-card">
+							<a href="#" class="btn btn-dark btn-vercurso">Ver Curso</a>
+							<div class="btn-acciones">
+								<button class="badge btn-dark btn-editar">
+									<a th:href="@{/cursos/actualizar/{id}(id=${cursos.idCursos})}"><i
+										class="fas fa-pen"></i></a>
+								</button>
+								<button class="badge btn-dark btn-eliminar">
+									<a th:href="@{/cursos/eliminar/{id}(id=${cursos.idCursos})}"><i
+										class="fas fa-trash-alt"></i></a>
+								</button>
+								<!-- <button
+									class="badge btn-secondary btn-editar"><a
+									th:href="@{/cursos/actualizar/{id}(id=${cursos.idCursos})}"
+									><i
+										class="fas fa-pen"></i></a></button> 
+								<button class="badge btn-danger btn-eliminar"><a
+									th:href="@{/cursos/eliminar/{id}(id=${cursos.idCursos})}"
+									><i
+										class="fas fa-trash-alt"></i></a></button> -->
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+	</div>
+	<br />
+	<br />
+	<script
+		src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+		crossorigin="anonymous"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../js/datatables.min.js" type="text/javascript"></script>
+	<script src="../js/nav.js" type="text/javascript"></script>
+</body>
+</html>

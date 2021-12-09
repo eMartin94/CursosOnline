@@ -1,0 +1,24 @@
+
+.navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute !important;
+}
+#sticky-footer {
+  flex-shrink: none;
+}
+#nav-link-custom {
+    color: black;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+#seccion1{
+    background: #ffffff
+}
+
+#contenedor {
+	 background: #ffffff
+}
+
+#principal{
+	 background: #ffffff
+}
