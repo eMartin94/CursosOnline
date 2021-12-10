@@ -359,12 +359,139 @@ tbody {
 }
 
 /* FIN CARDS */
+
+
+/* CONTENDOR EDITAR */
+.container-full{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+/* INICIO CONTENEDOR FORMULARIO*/
+
+.container-form{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+.container-input{
+	border: 5px solid var(--negro);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 600px;
+	gap: 20px;
+	background-color: var(--verde);
+	padding: 20px;
+	border-radius: 20px;
+}
+.input-text{
+	height: 40px;
+	padding:  0 15px;
+}
+.input-text,
+.input-text-area,
+.select-form{
+	border: none;
+	width: 100%;
+	font-family: var(--font);
+	padding: 5px 15px;
+	border-radius: 20px;
+	outline: none;
+}
+.input-text-area{
+	resize: none;
+}
+.form-fieldset{
+	display: flex;
+	justify-content: center;
+	border: 3px solid #343a40;
+	border-radius: 20px;
+	width: 500px;
+	margin-bottom: 10px;
+}
+.select-form{
+	height: 40px;
+	padding: 0 15px;
+	appearance: none;
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+	background-repeat: no-repeat, repeat;
+	background-position: right 1em top 50%, 0 0;
+	background-size: 1.3em auto, 100%;
+	font-family: var(--font);
+	cursor: pointer;
+	
+}
+.select-form::after{
+	right: 10px;
+	bottom: 10px;
+}
+
+.select-form::-ms-expand{
+	display: none;
+	color: var(--rojo);
+}
+
+.btn-save{
+	font-family: var(--font);
+	width: 150px;
+	height: 40px;
+	border: 0;
+	border-radius: 20px;
+	background-color: var(--amarillo);
+	box-shadow: 2px 3px var(--shadgris);
+	outline: none;
+	
+}
+.btn-save:hover{
+	color: var(--blanco);
+	cursor: pointer;
+	background-color: var(--shadamarillo);
+}
+
+.select-form:focus{
+	background-color: var(--body);
+
+}
+
+/* FIN CONTENEDOR FORMULARIO */
+.btn-return{
+	margin-top: 10px;
+	font-family: var(--font);
+	width: 200px;
+	height: 40px;
+	background-color: var(--gris);
+	border-radius: 20px;
+	outline: none;
+	border: 0;
+	box-shadow: 2px 3px var(--shadgris);
+}
+.btn-return:hover{
+	cursor: pointer;
+	background-color: var(--negro);
+}
+.btn-return a{
+	text-decoration: none;
+	color: var(--blanco)
+}
+
+
+
 @media ( max-width : 1200px) {
 	.contCard {
-		display: grid;
-		grid-template-columns: auto auto;
+/* 		display: grid; */
+/* 		grid-template-columns: auto auto; */
+		display: flex;
+		flex-wrap: wrap;
 		gap: 20px;
 		width: 100%;
+		justify-content: space-evenly;
+		align-items: center;
 	}
 	.card{
 		max-width: 400px;
@@ -372,10 +499,14 @@ tbody {
 }
 @media ( max-width : 900px) {
 	.contCard {
-		display: grid;
-		grid-template-columns: auto auto;
+/* 		display: grid; */
+/* 		grid-template-columns: auto auto; */
+		display: flex;
+		flex-wrap: wrap;
 		gap: 20px;
 		width: 100%;
+		justify-content: center;
+		align-items: center;
 	}
 	.card{
 		max-width: 350px;
@@ -399,11 +530,48 @@ tbody {
 		max-width: 500px;
 	
 	}
+	.container-input{
+		max-width: 500px;
+	}
+	.descrip,
+	.nom-cat,
+	.pre-dura{
+		display: flex;
+		width: 100%;
+		/* margin-bottom: 20px; */
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.nom-cat .form-fieldset,
+	.pre-dura .form-fieldset,
+	.descrip .form-fieldset{
+		display: flex;
+		width: 460px;
+	}
 }
 
 @media ( max-width: 550px){
 	.card{
 		max-width: 350px;
-	
+	}
+	.container-input{
+		max-width: 400px;
+	}
+	.descrip,
+	.nom-cat,
+	.pre-dura{
+		display: flex;
+		width: 100%;
+		/* margin-bottom: 20px; */
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.nom-cat .form-fieldset,
+	.pre-dura .form-fieldset,
+	.descrip .form-fieldset{
+		display: flex;
+		width: 320px;
 	}
 }
