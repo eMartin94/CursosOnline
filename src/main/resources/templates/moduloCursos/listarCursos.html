@@ -58,7 +58,7 @@
 				</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" th:href="@{/login}">Salir</a>
+					<a class="dropdown-item" th:href="@{/bienvenida}">Salir</a>
 				</div>
 			</li>
 			<!-- <button class="btn btn-warning btn-sm mr-2 btn-inisesion">Iniciar Sesion</button>
@@ -73,10 +73,10 @@
 		<div class="m-3 text-uppercase">
 			<h1>Cursos</h1>
 		</div>
-		<button class="btn btn-dark btn-new">
-			<a th:href="@{/cursos/nuevo}"><i class="fas fa-plus-circle"></i>
+		
+			<a class="btn btn-dark btn-new" th:href="@{/cursos/nuevo}"><i class="fas fa-plus-circle"></i>
 				Nuevo Curso</a>
-		</button>
+		
 		<br /> <br />
 		<div class="contCard">
 
@@ -104,11 +104,11 @@
 						<div class="botones-card">
 							<a href="#" class="btn btn-dark btn-vercurso">Ver Curso</a>
 							<div class="btn-acciones">
-								<button class="badge btn-dark btn-editar">
+								<button class="badge  btn-editar">
 									<a th:href="@{/cursos/actualizar/{id}(id=${cursos.idCursos})}"><i
 										class="fas fa-pen"></i></a>
 								</button>
-								<button class="badge btn-dark btn-eliminar">
+								<button class="badge  btn-eliminar">
 									<a th:href="@{/cursos/eliminar/{id}(id=${cursos.idCursos})}"><i
 										class="fas fa-trash-alt"></i></a>
 								</button>
