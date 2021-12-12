@@ -37,7 +37,7 @@
 				<div class="nom-cat">
 					<fieldset class="form-fieldset">
 						<legend>Nombre y Apellido</legend>
-						<input class="input-text" type="text" th:field="*{nombre}"
+						<input class="input-text" type="text" th:field="*{nombre}" placeholder="Ingrese su nombre y apellido"
 							maxlength="100" required />
 					</fieldset>
 
@@ -55,7 +55,7 @@
 				<div class="pre-dura">
 					<fieldset class="form-fieldset">
 						<legend>Usuario</legend>
-						<input class="input-text" type="text" th:field="*{nomUsuario}"
+						<input class="input-text" type="text" th:field="*{nomUsuario}" placeholder="Ingrese su nombre de usuario"
 							required />
 					</fieldset>
 				</div>
@@ -63,13 +63,13 @@
 				<div class="pre-dura">
 					<fieldset class="form-fieldset">
 						<legend>Correo</legend>
-						<input class="input-text" type="text" th:field="*{correo}"
+						<input class="input-text" type="email" th:field="*{correo}" placeholder="Ingrese su correo electrónico"
 							required />
 					</fieldset>
 
 					<fieldset class="form-fieldset">
 						<legend>Contraseña</legend>
-						<input class="input-text" type="password" th:field="*{contrasena}"
+						<input class="input-text" type="password" th:field="*{contrasena}" placeholder="Ingrese ssu contraseña"
 							maxlength="50" />
 					</fieldset>
 				</div>
