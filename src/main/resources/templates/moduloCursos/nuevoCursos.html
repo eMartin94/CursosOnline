@@ -52,10 +52,10 @@
 						<input class="input-text" type="text" th:field="*{precio}"
 							required />
 					</fieldset>
-					<div class="form-fieldset">
+					<div class="nom-cat">
 					<fieldset class="form-fieldset">
 						<legend>Categoria</legend>
-						<Select th:field="*{categoria}" class="form-control" required>
+						<Select th:field="*{categoria}" class="select-from" required>
 							<option value=""  selected>Seleccionar</option>
 							<option th:each="categoria:${lstCategoria}"
 									th:value="${categoria.idCategoria}"

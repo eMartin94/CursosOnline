@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+	rel="stylesheet">
+<link href="./../css/estilos.css" rel="stylesheet" type="text/css" />
+<!-- <link href="../../css/miLogin.css" rel="stylesheet" type="text/css" /> -->
+
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+<title>Nuevo Permiso</title>
+
+</head>
+
+<body>
+	<div class="container-full">
+		<form class="container-form" action="#" th:action="@{/permisos/guardar}"
+			th:object="${permisos}" method="post">
+			<div>
+				<h1>Nuevo Permiso</h1>
+			</div>
+			<br />
+			<div class="container-input">
+
+				<div class="nom-cat">
+					<fieldset class="form-fieldset">
+						<legend>Nombre</legend>
+						<input class="input-text" type="text" th:field="*{nomPermiso}"
+							maxlength="100" placeholder="Ingresa nombre de permiso" required />
+					</fieldset>
+
+					
+				</div>
+
+
+				<button class="btn-save" type="submit">Guardar</button>
+			</div>
+		</form>
+
+
+
+		<button class="btn-return">
+			<a th:href="@{/permisos/listarPermisos}">Regresar al listado</a>
+		</button>
+
+	</div>
+
+
+</body>
+
+</html>
