@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+	rel="stylesheet">
+<link href="./../css/estilos.css" rel="stylesheet" type="text/css" />
+<!-- <link href="../../css/miLogin.css" rel="stylesheet" type="text/css" /> -->
+
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+<title>Nuevo Usuario</title>
+
+</head>
+
+<body>
+	<div class="container-full">
+		<form class="container-form" action="#" th:action="@{/process_register}"
+			th:object="${usuario}" method="post">
+			<div>
+				<h1>Nuevo Usuario</h1>
+			</div>
+			<br />
+			<div class="container-input">
+<!-- 				<input class="input-text" type="text" th:field="*{idUsuario}" -->
+<!-- 					readonly="readonly" hidden /> -->
+				<input class="input-text" type="text" th:field="*{fecRegistro}"
+					readonly="readonly" hidden />
+<!-- 				<input class="input-text" type="text" th:field="*{permisos.idPermisos}" -->
+<!-- 					 hidden /> -->
+
+				<div class="nom-cat">
+					<fieldset class="form-fieldset">
+						<legend>Nombre y Apellido</legend>
+						<input class="input-text" type="text" th:field="*{nombre}" placeholder="Ingrese su nombre y apellido"
+							maxlength="100" required />
+					</fieldset>
+
+<!-- 					<fieldset class="form-fieldset"> -->
+<!-- 						<legend>Permiso</legend> -->
+						<Select th:field="*{permisos}" class="select-form" hidden>
+							<option value="2"  selected></option>
+<!-- 							<option th:each="permisos:${lstPermisos}" -->
+<!-- 								th:value="${permisos.idPermisos}" -->
+<!-- 								th:text="${permisos.nomPermiso}"></option> -->
+						</select>
+<!-- 					</fieldset> -->
+				</div>
+
+				<div class="pre-dura">
+					<fieldset class="form-fieldset">
+						<legend>Usuario</legend>
+						<input class="input-text" type="text" th:field="*{nomUsuario}" placeholder="Ingrese su nombre de usuario"
+							required />
+					</fieldset>
+				</div>
+                
+				<div class="pre-dura">
+					<fieldset class="form-fieldset">
+						<legend>Correo</legend>
+						<input class="input-text" type="email" th:field="*{correo}" placeholder="Ingrese su correo electrónico"
+							required />
+					</fieldset>
+
+					<fieldset class="form-fieldset">
+						<legend>Contraseña</legend>
+						<input class="input-text" type="password" th:field="*{contrasena}" placeholder="Ingrese ssu contraseña"
+							maxlength="50" />
+					</fieldset>
+				</div>
+                
+                <div class="pre-dura">
+                    <fieldset class="form-fieldset">
+                        <legend>Fecha de Nacimiento</legend>
+                        <input class="input-text" type="date" th:field="*{fecNacimiento}"
+                            required />
+                    </fieldset>
+
+                    <fieldset class="form-fieldset">
+                        <legend>Sexo</legend>
+<!--                         <input class="input-text" type="text" th:field="*{sexo}" -->
+<!--                             maxlength="50" required /> -->
+						<Select th:field="*{sexo}" class="select-form" required>
+							<option value=""  selected>Seleccionar</option>
+							<option th:value="Femenino" th:text="Femenino"></option>
+							<option th:value="Masculino" th:text="Masculino"></option>
+						</select>
+
+                    </fieldset>
+                </div>
+
+				<button class="btn-save" type="submit">Guardar</button>
+			</div>
+		</form>
+
+
+
+		<button class="btn-return">
+			<a th:href="@{/usuarios/listarUsuario}">Regresar al listado</a>
+		</button>
+
+	</div>
+
+
+</body>
+
+</html>
