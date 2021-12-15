@@ -6,46 +6,41 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 <title>Nueva Categoria</title>
+<link href="./../css/estilos.css" rel="stylesheet" type="text/css"/>
 <style type="text/css">
-body{
-background-color: #0E75AA;
-color: white;
-font-family: 'Josefin Sans', sans-serif;
-}
-h1{
-font-weight: bold;
-}
+
 
 </style>
 </head>
 <body>
-	<div class="container">
-		<div class="m-3">
-		<h1>Nueva Categoria</h1>
-		</div>
+	<div class="container-full">
+		
 		<br />
-		<form class="form" action="#" th:action="@{/categorias/guardar}" th:object="${categoria}"
+		<form class="container-form" action="#" th:action="@{/categorias/guardar}" th:object="${categoria}"
 			method="post">
-
-			<table border="0" cellpadding="10">
-				<tr>
-					<td>Descripcion:</td>
-					<td><input class="form-control" type="text" th:field="*{nomCategoria}" /></td>
-				</tr>
-
+			<div class="m-3">
+				<h1>Nueva Categoria</h1>
+			</div>
+			<br/>
+			<div class="container-input">
+				<div class="nom-cat">
+					<fieldset class="form-fieldset">
+						<legend>Describir</legend>
+					<input class="input-text" type="text" th:field="*{nomCategoria}" />
+					</fieldset>
+				</div>
 				
-				<tr>
-					<td colspan="2"><button class="btn btn-primary" style="background: #06C67F;" type="submit">Guardar</button></td>
-				</tr>
-			</table>
+				<td colspan="2"><button class="btn-save"  type="submit">Guardar</button></td>
+				
+			</div>
 		</form>
-
-	<div class="m-3 d-flex justify-content-between">
-		<span></span> 
-		<button class="btn btn-secondary">
-		<a th:href="@{/categorias/listarCategoria}" style="text-decoration: none; color: white; text-align: star;">Regresar al listado</a> <br />
-		</button>
-	</div>
+	
+		<div class="m-3 d-flex justify-content-between">
+			<span></span>
+			<button class="btn-return">
+			<a th:href="@{/categorias/listarCategoria}">Regresar al listado</a> <br />
+			</button>
+		</div>
 	</div>
 </body>
 </html>
