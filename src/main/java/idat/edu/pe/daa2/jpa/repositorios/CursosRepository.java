@@ -16,4 +16,8 @@ public interface CursosRepository extends CrudRepository<CursosModel, Integer>{
 	
 	@Query(value = "SELECT c FROM CursosModel c WHERE c.nomCurso like CONCAT(?1, '%')")
 	public List<CursosModel> buscarCursosLikeNomCurso(String nomCurso);
+	
+	//Nombre del curso que coincida
+	@Query(value = "Select c from CursosModel c where c.nomCurso like %?1%")
+	public List<CursosModel> findCursoByNameLike(String nomCurso);
 }

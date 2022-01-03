@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import idat.edu.pe.daa2.jpa.modelo.CategoriaModel;
@@ -32,6 +33,15 @@ public class CursosController {
 		List<CursosModel> listaCursos = cursosServicio.buscarTodo();
 		model.addAttribute("listaCursos", listaCursos);
 		return "/moduloCursos/listarCursos";
+	}
+	
+	//CursoPorNombre
+	@RequestMapping(value="/CursoNombre", method = RequestMethod.POST)
+	public ModelAndView listarCursoPorNombre(@RequestParam(name="nomCurso")String nomCurso) {
+		ModelAndView mav = new ModelAndView("/moduloCursos/listarCursos");
+		List<CursosModel> curso = cursosServicio.buscarPorNombre(nomCurso);
+		mav.addObject("curso", curso);
+		return mav;
 	}
 	
 	@RequestMapping("/nuevo")

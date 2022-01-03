@@ -26,6 +26,12 @@ public class CursosService {
 		return (List<CursosModel>) cursosRepositorio.findAll();
 	}
 	
+	//ListarCursosPorNombre
+	public List<CursosModel> buscarPorNombre(String nomCurso){
+		return(List<CursosModel>) cursosRepositorio.findCursoByNameLike(nomCurso);
+	}
+	
+	
 	//Crear
 	public CursosModel crear(CursosModel cursos) {
 		return cursosRepositorio.save(cursos);
